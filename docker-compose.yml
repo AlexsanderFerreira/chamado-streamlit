@@ -1,16 +1,9 @@
-version: '3.8'
-
 services:
-  app:
+  streamlit:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: app_streamlit
     ports:
-      - "8501:8501" # Mapeia a porta do contêiner para o host
-    environment:
-      - API_USERNAME=${API_USERNAME}
-      - API_PASSWORD=${API_PASSWORD}
-      - API_URL=${API_URL}
+      - "8501:8501"
     volumes:
-      - .:/app # Monta o diretório atual no contêiner
+      - .:/app
